@@ -38,7 +38,7 @@ const server = http.createServer(app);
 
 export const io = new Server(server, {
    cors: {
-      origin: "http://localhost:8080", // frontend
+      origin: "*", // Allow all origins for simplicity in this booking app
       methods: ["GET", "POST"],
    },
 });

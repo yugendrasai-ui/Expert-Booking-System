@@ -6,14 +6,29 @@ dotenv.config();
 
 const experts = [
     {
-        _id: "6999a432aa078ab15d7debfb", // ID from user's booking screenshot
+        _id: "6999a432aa078ab15d7debfb",
         name: "Alex Rivera",
+        email: "alex@example.com",
+        password: "password123",
         category: "Frontend",
         description: "Specializing in React, Next.js, and high-performance web applications. Former Lead at unicorn startup.",
         experience: 8,
         rating: 4.8,
         price: 100,
         profileImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200&h=200",
+        slots: []
+    },
+    {
+        _id: "67b9a432aa078ab15d7debfc",
+        name: "Sarah Chen",
+        email: "sarah@example.com",
+        password: "password123",
+        category: "AI/ML",
+        description: "Expert in PyTorch, TensorFlow, and Large Language Models. PhD in Computer Science.",
+        experience: 6,
+        rating: 4.9,
+        price: 150,
+        profileImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200",
         slots: []
     }
 ];
