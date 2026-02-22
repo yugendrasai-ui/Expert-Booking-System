@@ -33,7 +33,8 @@ const ExpertRegister = () => {
         setIsSubmitting(true);
 
         try {
-            const { data } = await axios.post("http://localhost:5000/api/auth/register-expert", {
+            const apiBase = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+            const { data } = await axios.post(`${apiBase}/auth/register-expert`, {
                 ...formData,
                 experience: Number(formData.experience),
                 price: Number(formData.price),
