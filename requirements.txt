@@ -1,0 +1,31 @@
+# Expert Booking System - Requirements
+
+## Environment
+- Node.js (v18 or higher)
+- npm (v9 or higher)
+- MongoDB (Atlas or local instance)
+
+## Backend Dependencies
+- express: Web framework for Node.js
+- mongoose: MongoDB object modeling tool
+- socket.io: Real-time bidirectional event-based communication
+- jsonwebtoken: JWT implementation for authentication
+- bcryptjs: Password hashing library
+- dotenv: Environment variable management
+- cors: Cross-Origin Resource Sharing middleware
+- nodemon (dev): Auto-restart server on changes
+
+## Frontend Dependencies
+- react: UI library
+- react-dom: Entry point to the DOM for React
+- react-router-dom: Declarative routing for React
+- @tanstack/react-query: Data-fetching and state management
+- axios: Promise-based HTTP client
+- lucide-react: Icon library
+- socket.io-client: Real-time client-side communication
+- zod: TypeScript-first schema validation
+- react-hook-form: Performant form validation
+- tailwindcss: Utility-first CSS framework
+- shadcn/ui: Reusable UI components
+- date-fns: Date utility library
+- vite (dev): Fast frontend build tool

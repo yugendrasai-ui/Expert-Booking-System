@@ -1,0 +1,4 @@
+pass:NlCjC4sUEKZABquQ
+username:yugendrasai797_db_user
+
+mongodb+srv://yugendrasai797_db_user:NlCjC4sUEKZABquQ@cluster0.hsvuhfq.mongodb.net/?appName=Cluster0
