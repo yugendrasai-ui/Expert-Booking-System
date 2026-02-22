@@ -15,7 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
-import { io } from "socket.io-client";
+import { socket } from "@/lib/socket";
 
 interface Booking {
     _id: string;
@@ -38,8 +38,7 @@ const ExpertDashboard = () => {
     useEffect(() => {
         fetchBookings();
 
-        // Set up Socket.io for real-time notifications
-        const socket = io("http://localhost:5000");
+        // Use centralized socket from @/lib/socket
 
         socket.on("connect", () => {
             console.log("Connected to notification socket");
@@ -56,14 +55,16 @@ const ExpertDashboard = () => {
             setBookings(prev => [booking, ...prev]);
         });
 
-        return () => {
-            socket.disconnect();
-        };
+        // socket cleanup is handled in the lib or if we want to leave it connected
+        // return () => {
+        //     socket.disconnect();
+        // };
     }, [user]);
 
     const fetchBookings = async () => {
         try {
-            const { data } = await axios.get("http://localhost:5000/api/bookings/expert-bookings", {
+            const apiBase = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+            const { data } = await axios.get(`${apiBase}/bookings/expert-bookings`, {
                 headers: { Authorization: `Bearer ${user?.token}` }
             });
             setBookings(data);
@@ -80,7 +81,8 @@ const ExpertDashboard = () => {
 
     const updateStatus = async (id: string, status: string) => {
         try {
-            await axios.put(`http://localhost:5000/api/bookings/${id}/status`,
+            const apiBase = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+            await axios.put(`${apiBase}/bookings/${id}/status`,
                 { status },
                 { headers: { Authorization: `Bearer ${user?.token}` } }
             );
