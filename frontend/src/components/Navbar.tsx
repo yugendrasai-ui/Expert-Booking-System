@@ -73,13 +73,13 @@ const Navbar = () => {
           ) : (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="relative h-10 w-full flex items-center gap-2 rounded-full px-4 pr-3 hover:bg-gray-100">
-                  <div className="flex flex-col items-end text-right">
-                    <span className="text-sm font-semibold">{user.name}</span>
-                    <span className="text-xs text-muted-foreground capitalize">{user.role}</span>
+                <Button variant="ghost" className="relative h-10 flex items-center gap-2 rounded-full px-3 hover:bg-gray-100 max-w-xs">
+                  <div className="flex flex-col items-end text-right min-w-0">
+                    <span className="text-sm font-semibold truncate">{user.name}</span>
+                    <span className="text-xs text-muted-foreground capitalize truncate">{user.role}</span>
                   </div>
-                  <User className="h-5 w-5 p-1 bg-primary text-primary-foreground rounded-full" />
-                  <ChevronDown className="h-4 w-4 text-gray-500" />
+                  <User className="h-5 w-5 p-1 bg-primary text-primary-foreground rounded-full flex-shrink-0" />
+                  <ChevronDown className="h-4 w-4 text-gray-500 flex-shrink-0" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56" align="end" forceMount>
